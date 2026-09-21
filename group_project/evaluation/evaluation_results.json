@@ -1,0 +1,777 @@
+{
+  "dataset_size": 18,
+  "top_k": 5,
+  "score_threshold": 0.3,
+  "avg_a": {
+    "faithfulness": 0.4722,
+    "answer_relevance": 0.4444,
+    "context_recall": 0.5167,
+    "context_precision": 0.2056
+  },
+  "avg_b": {
+    "faithfulness": 0.7778,
+    "answer_relevance": 0.4444,
+    "context_recall": 0.6667,
+    "context_precision": 0.3389
+  },
+  "per_case": [
+    {
+      "case": 1,
+      "question": "Sinh viên UIT được mượn bao nhiêu sách tham khảo tối đa?",
+      "expected_answer": "Sinh viên UIT được mượn tối đa 3 sách tham khảo.",
+      "expected_context": "library-loan-student",
+      "config_a": {
+        "retrieval_source": "dense",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 0.0,
+          "answer_relevance": 0.0,
+          "context_recall": 0.0,
+          "context_precision": 0.0
+        },
+        "root_cause": "retrieval: ngữ cảnh thiếu thông tin để trả lời (recall thấp)",
+        "answer": "Sinh viên UIT được mượn tối đa 5 cuốn sách tham khảo."
+      },
+      "config_b": {
+        "retrieval_source": "hybrid",
+        "n_sources": 3,
+        "metrics": {
+          "faithfulness": 1.0,
+          "answer_relevance": 1.0,
+          "context_recall": 1.0,
+          "context_precision": 0.5
+        },
+        "root_cause": "ok",
+        "answer": "Tại Thư viện UIT, sinh viên được mượn tối đa 3 cuốn sách tham khảo.  \n(Nếu mượn tại các thư viện thành viên khác của ĐHQG-HCM, mức tối đa chung cho sách tham khảo – giáo trình là 5 cuốn.)"
+      },
+      "delta": {
+        "faithfulness": 1.0,
+        "answer_relevance": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 0.5
+      }
+    },
+    {
+      "case": 2,
+      "question": "Hạn mượn sách tham khảo cho sinh viên là bao nhiêu ngày?",
+      "expected_answer": "Hạn mượn sách tham khảo cho sinh viên là 21 ngày, có thể gia hạn 2 lần, mỗi lần 7 ngày.",
+      "expected_context": "library-loan-student",
+      "config_a": {
+        "retrieval_source": "dense",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 1.0,
+          "answer_relevance": 1.0,
+          "context_recall": 1.0,
+          "context_precision": 0.75
+        },
+        "root_cause": "ok",
+        "answer": "Hạn mượn sách tham khảo cho sinh viên là 21 ngày (có thể gia hạn 2 lần, mỗi lần 7 ngày)."
+      },
+      "config_b": {
+        "retrieval_source": "hybrid",
+        "n_sources": 3,
+        "metrics": {
+          "faithfulness": 1.0,
+          "answer_relevance": 0.5,
+          "context_recall": 1.0,
+          "context_precision": 1.0
+        },
+        "root_cause": "ok",
+        "answer": "Hạn mượn sách tham khảo cho sinh viên là 21 ngày."
+      },
+      "delta": {
+        "faithfulness": 0.0,
+        "answer_relevance": -0.5,
+        "context_recall": 0.0,
+        "context_precision": 0.25
+      }
+    },
+    {
+      "case": 3,
+      "question": "Giảng viên UIT được mượn bao nhiêu giáo trình tối đa?",
+      "expected_answer": "Giảng viên UIT được mượn tối đa 5 giáo trình.",
+      "expected_context": "library-loan-faculty",
+      "config_a": {
+        "retrieval_source": "dense",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 0.0,
+          "answer_relevance": 0.0,
+          "context_recall": 0.0,
+          "context_precision": 0.0
+        },
+        "root_cause": "retrieval: ngữ cảnh thiếu thông tin để trả lời (recall thấp)",
+        "answer": "Giảng viên UIT được mượn tối đa 5 quyển giáo trình."
+      },
+      "config_b": {
+        "retrieval_source": "hybrid",
+        "n_sources": 3,
+        "metrics": {
+          "faithfulness": 1.0,
+          "answer_relevance": 1.0,
+          "context_recall": 1.0,
+          "context_precision": 0.8
+        },
+        "root_cause": "ok",
+        "answer": "Giảng viên UIT được mượn tối đa 5 cuốn giáo trình."
+      },
+      "delta": {
+        "faithfulness": 1.0,
+        "answer_relevance": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 0.8
+      }
+    },
+    {
+      "case": 4,
+      "question": "Hạn mượn giáo trình cho giảng viên tại Thư viện UIT là bao nhiêu ngày?",
+      "expected_answer": "Hạn mượn giáo trình cho giảng viên tại Thư viện UIT là 90 ngày, gia hạn 2 lần, mỗi lần 15 ngày.",
+      "expected_context": "library-loan-faculty",
+      "config_a": {
+        "retrieval_source": "dense",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 1.0,
+          "answer_relevance": 1.0,
+          "context_recall": 1.0,
+          "context_precision": 0.25
+        },
+        "root_cause": "retrieval: độ chính xác ngữ cảnh thấp (nhiều đoạn không liên quan)",
+        "answer": "Hạn mượn giáo trình cho giảng viên tại Thư viện UIT là 90 ngày (có thể gia hạn 2 lần, mỗi lần 15 ngày)."
+      },
+      "config_b": {
+        "retrieval_source": "hybrid",
+        "n_sources": 3,
+        "metrics": {
+          "faithfulness": 1.0,
+          "answer_relevance": 0.5,
+          "context_recall": 1.0,
+          "context_precision": 0.8
+        },
+        "root_cause": "ok",
+        "answer": "Hạn mượn giáo trình cho giảng viên tại Thư viện UIT là 90 ngày."
+      },
+      "delta": {
+        "faithfulness": 0.0,
+        "answer_relevance": -0.5,
+        "context_recall": 0.0,
+        "context_precision": 0.55
+      }
+    },
+    {
+      "case": 5,
+      "question": "Tổng số tín chỉ tối thiểu để tốt nghiệp ngành Công nghệ Thông tin là bao nhiêu?",
+      "expected_answer": "Tổng số tín chỉ tối thiểu để tốt nghiệp là 125 tín chỉ.",
+      "expected_context": "k18-it-cu-nhan-nganh-cong-nghe-thong-tin-ap-dung-tu-khoa-18-2023",
+      "config_a": {
+        "retrieval_source": "dense",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 0.0,
+          "answer_relevance": 1.0,
+          "context_recall": 0.0,
+          "context_precision": 0.0
+        },
+        "root_cause": "retrieval: ngữ cảnh thiếu thông tin để trả lời (recall thấp)",
+        "answer": ""
+      },
+      "config_b": {
+        "retrieval_source": "hybrid",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 1.0,
+          "answer_relevance": 0.0,
+          "context_recall": 1.0,
+          "context_precision": 0.2
+        },
+        "root_cause": "generation: truy xuất được nhưng câu trả lời không khớp kỳ vọng",
+        "answer": "Tổng số tín chỉ toàn khoá tối thiểu để tốt nghiệp ngành Công nghệ Thông tin là 123 tín chỉ."
+      },
+      "delta": {
+        "faithfulness": 1.0,
+        "answer_relevance": -1.0,
+        "context_recall": 1.0,
+        "context_precision": 0.2
+      }
+    },
+    {
+      "case": 6,
+      "question": "Số tín chỉ môn Giáo dục đại cương là bao nhiêu?",
+      "expected_answer": "Số tín chỉ môn Giáo dục đại cương là 45 tín chỉ.",
+      "expected_context": "k18-it-cu-nhan-nganh-cong-nghe-thong-tin-ap-dung-tu-khoa-18-2023",
+      "config_a": {
+        "retrieval_source": "dense",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 1.0,
+          "answer_relevance": 1.0,
+          "context_recall": 1.0,
+          "context_precision": 0.5
+        },
+        "root_cause": "ok",
+        "answer": "Số tín chỉ của khối Giáo dục đại cương là 45 tín chỉ."
+      },
+      "config_b": {
+        "retrieval_source": "hybrid",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 0.0,
+          "answer_relevance": 0.0,
+          "context_recall": 0.0,
+          "context_precision": 0.0
+        },
+        "root_cause": "retrieval: ngữ cảnh thiếu thông tin để trả lời (recall thấp)",
+        "answer": "Theo quy định tại mục 3.3, khối kiến thức Giáo dục đại cương có tổng cộng 45 tín chỉ  \n(bao gồm 44 tín chỉ lý thuyết và 1 tín chỉ thực hành; đã tính cả Anh văn nhưng không đưa tín chỉ Giáo dục quốc phòng và Giáo dục thể chất vào tính điểm trung bình chung)."
+      },
+      "delta": {
+        "faithfulness": -1.0,
+        "answer_relevance": -1.0,
+        "context_recall": -1.0,
+        "context_precision": -0.5
+      }
+    },
+    {
+      "case": 7,
+      "question": "Số tín chỉ chuyên ngành trong ngành Công nghệ Thông tin là bao nhiêu?",
+      "expected_answer": "Số tín chỉ chuyên ngành là 24 tín chỉ.",
+      "expected_context": "k18-it-cu-nhan-nganh-cong-nghe-thong-tin-ap-dung-tu-khoa-18-2023",
+      "config_a": {
+        "retrieval_source": "dense",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 0.0,
+          "answer_relevance": 0.0,
+          "context_recall": 0.0,
+          "context_precision": 0.0
+        },
+        "root_cause": "retrieval: ngữ cảnh thiếu thông tin để trả lời (recall thấp)",
+        "answer": "Theo đề cương, khối kiến thức giáo dục chuyên nghiệp (tức khối kiến thức chuyên ngành) của ngành Công nghệ Thông tin là 75 tín chỉ."
+      },
+      "config_b": {
+        "retrieval_source": "hybrid",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 1.0,
+          "answer_relevance": 0.0,
+          "context_recall": 1.0,
+          "context_precision": 0.2
+        },
+        "root_cause": "generation: truy xuất được nhưng câu trả lời không khớp kỳ vọng",
+        "answer": ""
+      },
+      "delta": {
+        "faithfulness": 1.0,
+        "answer_relevance": 0.0,
+        "context_recall": 1.0,
+        "context_precision": 0.2
+      }
+    },
+    {
+      "case": 8,
+      "question": "Sinh viên có thể mượn bao nhiêu giáo trình?",
+      "expected_answer": "Sinh viên có thể mượn tối đa 5 giáo trình.",
+      "expected_context": "library-loan-student",
+      "config_a": {
+        "retrieval_source": "dense",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 1.0,
+          "answer_relevance": 1.0,
+          "context_recall": 1.0,
+          "context_precision": 0.5
+        },
+        "root_cause": "ok",
+        "answer": "Sinh viên được mượn tối đa 5 cuốn giáo trình (mỗi lần mượn 21 ngày, được gia hạn 2 lần, mỗi lần 7 ngày)."
+      },
+      "config_b": {
+        "retrieval_source": "hybrid",
+        "n_sources": 3,
+        "metrics": {
+          "faithfulness": 0.0,
+          "answer_relevance": 0.0,
+          "context_recall": 0.0,
+          "context_precision": 0.0
+        },
+        "root_cause": "retrieval: ngữ cảnh thiếu thông tin để trả lời (recall thấp)",
+        "answer": "Sinh viên UIT được mượn tối đa 5 cuốn giáo trình (mỗi lần mượn 21 ngày và được gia hạn 2 lần, mỗi lần 7 ngày)."
+      },
+      "delta": {
+        "faithfulness": -1.0,
+        "answer_relevance": -1.0,
+        "context_recall": -1.0,
+        "context_precision": -0.5
+      }
+    },
+    {
+      "case": 9,
+      "question": "Tỷ lệ phần trăm tín chỉ chuyên ngành trong tổng số là bao nhiêu?",
+      "expected_answer": "Tỷ lệ phần trăm tín chỉ chuyên ngành là 54.4%.",
+      "expected_context": "k18-it-cu-nhan-nganh-cong-nghe-thong-tin-ap-dung-tu-khoa-18-2023",
+      "config_a": {
+        "retrieval_source": "dense",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 0.5,
+          "answer_relevance": 0.0,
+          "context_recall": 0.3,
+          "context_precision": 0.2
+        },
+        "root_cause": "retrieval: ngữ cảnh thiếu thông tin để trả lời (recall thấp)",
+        "answer": "Tỷ lệ tín chỉ chuyên ngành = 75 TC chuyên ngành / 120 TC tổng số × 100% = 62,5%."
+      },
+      "config_b": {
+        "retrieval_source": "hybrid",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 0.0,
+          "answer_relevance": 0.0,
+          "context_recall": 0.0,
+          "context_precision": 0.0
+        },
+        "root_cause": "retrieval: ngữ cảnh thiếu thông tin để trả lời (recall thấp)",
+        "answer": ""
+      },
+      "delta": {
+        "faithfulness": -0.5,
+        "answer_relevance": 0.0,
+        "context_recall": -0.3,
+        "context_precision": -0.2
+      }
+    },
+    {
+      "case": 10,
+      "question": "Môn tốt nghiệp (T) là bao nhiêu tín chỉ?",
+      "expected_answer": "Môn tốt nghiệp (T) là 12 tín chỉ.",
+      "expected_context": "k18-it-cu-nhan-nganh-cong-nghe-thong-tin-ap-dung-tu-khoa-18-2023",
+      "config_a": {
+        "retrieval_source": "dense",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 1.0,
+          "answer_relevance": 0.0,
+          "context_recall": 1.0,
+          "context_precision": 0.2
+        },
+        "root_cause": "generation: truy xuất được nhưng câu trả lời không khớp kỳ vọng",
+        "answer": ""
+      },
+      "config_b": {
+        "retrieval_source": "hybrid",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 0.0,
+          "answer_relevance": 0.0,
+          "context_recall": 1.0,
+          "context_precision": 0.1
+        },
+        "root_cause": "generation: câu trả lời mang thông tin ngoài ngữ cảnh (hallucination)",
+        "answer": ""
+      },
+      "delta": {
+        "faithfulness": -1.0,
+        "answer_relevance": 0.0,
+        "context_recall": 0.0,
+        "context_precision": -0.1
+      }
+    },
+    {
+      "case": 11,
+      "question": "Sinh viên UIT được học bao nhiêu môn lý luận chính trị và pháp luật?",
+      "expected_answer": "Sinh viên UIT học 13 tín chỉ lý luận chính trị và pháp luật.",
+      "expected_context": "k18-it-cu-nhan-nganh-cong-nghe-thong-tin-ap-dung-tu-khoa-18-2023",
+      "config_a": {
+        "retrieval_source": "dense",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 0.0,
+          "answer_relevance": 0.0,
+          "context_recall": 1.0,
+          "context_precision": 0.2
+        },
+        "root_cause": "generation: câu trả lời mang thông tin ngoài ngữ cảnh (hallucination)",
+        "answer": ""
+      },
+      "config_b": {
+        "retrieval_source": "none",
+        "n_sources": 0,
+        "metrics": {
+          "faithfulness": 1.0,
+          "answer_relevance": 0.0,
+          "context_recall": 0.0,
+          "context_precision": 0.0
+        },
+        "root_cause": "retrieval: không truy xuất được đoạn nào",
+        "answer": ""
+      },
+      "delta": {
+        "faithfulness": 1.0,
+        "answer_relevance": 0.0,
+        "context_recall": -1.0,
+        "context_precision": -0.2
+      }
+    },
+    {
+      "case": 12,
+      "question": "Giảng viên có thể gia hạn sách tham khảo bao nhiêu lần?",
+      "expected_answer": "Giảng viên có thể gia hạn 2 lần, mỗi lần 7 ngày.",
+      "expected_context": "library-loan-faculty",
+      "config_a": {
+        "retrieval_source": "dense",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 0.0,
+          "answer_relevance": 0.0,
+          "context_recall": 0.0,
+          "context_precision": 0.0
+        },
+        "root_cause": "retrieval: ngữ cảnh thiếu thông tin để trả lời (recall thấp)",
+        "answer": "Giảng viên được gia hạn sách tham khảo tối đa 2 lần (mỗi lần 7 ngày)."
+      },
+      "config_b": {
+        "retrieval_source": "hybrid",
+        "n_sources": 4,
+        "metrics": {
+          "faithfulness": 1.0,
+          "answer_relevance": 1.0,
+          "context_recall": 1.0,
+          "context_precision": 0.8
+        },
+        "root_cause": "ok",
+        "answer": "Giảng viên có thể gia hạn sách tham khảo 2 lần (mỗi lần thêm 7 ngày)."
+      },
+      "delta": {
+        "faithfulness": 1.0,
+        "answer_relevance": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 0.8
+      }
+    },
+    {
+      "case": 13,
+      "question": "Luận án, luận văn, khóa luận có được mượn không?",
+      "expected_answer": "Luận án, luận văn, khóa luận chỉ được đọc tại chỗ, không được mượi về.",
+      "expected_context": "library-loan-student",
+      "config_a": {
+        "retrieval_source": "dense",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 0.0,
+          "answer_relevance": 1.0,
+          "context_recall": 0.0,
+          "context_precision": 0.0
+        },
+        "root_cause": "retrieval: ngữ cảnh thiếu thông tin để trả lời (recall thấp)",
+        "answer": "Luận án (Tiến sĩ), luận văn (Thạc sĩ) và khóa luận tốt nghiệp (Đại học) không nằm trong danh mục tài liệu mượn ra ngoài. Thư viện chỉ phục vụ tra cứu tại chỗ và sao chép (theo quy định bản quyền), cụ thể:  \n1. Sinh viên, giảng viên được phép vào phòng đọc để xem toàn văn luận án, luận văn, khóa luận.  \n2. Mỗi lần được sao chụp tối đa 10% tổng khối lượng tài liệu (hoặc theo quy định hiện hành về bản quyền).  \n3. Khi cần tham khảo dài hạn, xin liên hệ bộ phận Phục vụ bạn đọc để được hướng dẫn đặt chế độ đọc tại chỗ và/hoặc đặt in theo nhu cầu."
+      },
+      "config_b": {
+        "retrieval_source": "hybrid",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 1.0,
+          "answer_relevance": 0.0,
+          "context_recall": 0.0,
+          "context_precision": 0.0
+        },
+        "root_cause": "retrieval: ngữ cảnh thiếu thông tin để trả lời (recall thấp)",
+        "answer": ""
+      },
+      "delta": {
+        "faithfulness": 1.0,
+        "answer_relevance": -1.0,
+        "context_recall": 0.0,
+        "context_precision": 0.0
+      }
+    },
+    {
+      "case": 14,
+      "question": "Số tín chỉ Toán-Tin-Học-Khoa học tự nhiên là bao nhiêu?",
+      "expected_answer": "Số tín chỉ Toán-Tin học-Khoa học tự nhiên là 18 tín chỉ.",
+      "expected_context": "k18-it-cu-nhan-nganh-cong-nghe-thong-tin-ap-dung-tu-khoa-18-2023",
+      "config_a": {
+        "retrieval_source": "dense",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 0.0,
+          "answer_relevance": 0.0,
+          "context_recall": 0.0,
+          "context_precision": 0.0
+        },
+        "root_cause": "retrieval: ngữ cảnh thiếu thông tin để trả lời (recall thấp)",
+        "answer": "Nhóm Toán – Tin học – Khoa học tự nhiên có tổng cộng 18 tín chỉ (trong đó 17 tín chỉ lý thuyết và 1 tín chỉ thực hành)."
+      },
+      "config_b": {
+        "retrieval_source": "hybrid",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 1.0,
+          "answer_relevance": 1.0,
+          "context_recall": 1.0,
+          "context_precision": 0.2
+        },
+        "root_cause": "retrieval: độ chính xác ngữ cảnh thấp (nhiều đoạn không liên quan)",
+        "answer": "Số tín chỉ của nhóm Toán – Tin học – Khoa học tự nhiên là 18 tín chỉ (trong đó 17 tín chỉ lý thuyết và 1 tín chỉ thực hành)."
+      },
+      "delta": {
+        "faithfulness": 1.0,
+        "answer_relevance": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 0.2
+      }
+    },
+    {
+      "case": 15,
+      "question": "Số tín chỉ Ngoại ngữ trong chương trình học là bao nhiêu?",
+      "expected_answer": "Số tín chỉ Ngoại ngữ là 12 tín chỉ.",
+      "expected_context": "k18-it-cu-nhan-nganh-cong-nghe-thong-tin-ap-dung-tu-khoa-18-2023",
+      "config_a": {
+        "retrieval_source": "dense",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 1.0,
+          "answer_relevance": 1.0,
+          "context_recall": 1.0,
+          "context_precision": 0.15
+        },
+        "root_cause": "retrieval: độ chính xác ngữ cảnh thấp (nhiều đoạn không liên quan)",
+        "answer": "Số tín chỉ Ngoại ngữ trong toàn chương trình là 12 tín chỉ."
+      },
+      "config_b": {
+        "retrieval_source": "hybrid",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 1.0,
+          "answer_relevance": 1.0,
+          "context_recall": 1.0,
+          "context_precision": 0.3
+        },
+        "root_cause": "retrieval: độ chính xác ngữ cảnh thấp (nhiều đoạn không liên quan)",
+        "answer": "Số tín chỉ Ngoại ngữ trong chương trình là 12 tín chỉ."
+      },
+      "delta": {
+        "faithfulness": 0.0,
+        "answer_relevance": 0.0,
+        "context_recall": 0.0,
+        "context_precision": 0.15
+      }
+    },
+    {
+      "case": 16,
+      "question": "Tổng số tín chỉ kiến thức chuyên nghiệp là bao nhiêu?",
+      "expected_answer": "Tổng số tín chỉ kiến thức chuyên nghiệp là 68 tín chỉ.",
+      "expected_context": "k18-it-cu-nhan-nganh-cong-nghe-thong-tin-ap-dung-tu-khoa-18-2023",
+      "config_a": {
+        "retrieval_source": "dense",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 1.0,
+          "answer_relevance": 0.0,
+          "context_recall": 1.0,
+          "context_precision": 0.25
+        },
+        "root_cause": "generation: truy xuất được nhưng câu trả lời không khớp kỳ vọng",
+        "answer": "Tổng khối kiến thức giáo dục chuyên nghiệp là 75 tín chỉ."
+      },
+      "config_b": {
+        "retrieval_source": "hybrid",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 1.0,
+          "answer_relevance": 0.0,
+          "context_recall": 0.0,
+          "context_precision": 0.2
+        },
+        "root_cause": "retrieval: ngữ cảnh thiếu thông tin để trả lời (recall thấp)",
+        "answer": "Tổng số tín chỉ của khối kiến thức giáo dục chuyên nghiệp là 75 tín chỉ. "
+      },
+      "delta": {
+        "faithfulness": 0.0,
+        "answer_relevance": 0.0,
+        "context_recall": -1.0,
+        "context_precision": -0.05
+      }
+    },
+    {
+      "case": 17,
+      "question": "Khóa luận hoặc môn học chuyên đề tốt nghiệp là bao nhiêu tín chỉ?",
+      "expected_answer": "Khóa luận hoặc môn học chuyên đề tốt nghiệp là 10 tín chỉ.",
+      "expected_context": "k18-it-cu-nhan-nganh-cong-nghe-thong-tin-ap-dung-tu-khoa-18-2023",
+      "config_a": {
+        "retrieval_source": "dense",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 0.0,
+          "answer_relevance": 0.0,
+          "context_recall": 0.0,
+          "context_precision": 0.0
+        },
+        "root_cause": "retrieval: ngữ cảnh thiếu thông tin để trả lời (recall thấp)",
+        "answer": "Khóa luận tốt nghiệp được tính 10 tín chỉ; nếu không làm khóa luận thì phải học ít nhất 10 tín chỉ chuyên đề tốt nghiệp (gồm 3 môn chuyên đề do khoa quy định, tổng ≥ 10 tín chỉ)."
+      },
+      "config_b": {
+        "retrieval_source": "hybrid",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 1.0,
+          "answer_relevance": 1.0,
+          "context_recall": 1.0,
+          "context_precision": 0.3
+        },
+        "root_cause": "retrieval: độ chính xác ngữ cảnh thấp (nhiều đoạn không liên quan)",
+        "answer": "Khóa luận tốt nghiệp theo quy định là 10 tín chỉ.  \nNếu không làm khóa luận mà chọn học các môn chuyên đề tốt nghiệp thì cũng phải đạt tối thiểu 10 tín chỉ chuyên đề."
+      },
+      "delta": {
+        "faithfulness": 1.0,
+        "answer_relevance": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 0.3
+      }
+    },
+    {
+      "case": 18,
+      "question": "Giảng viên được mượon bao nhiêu sách tham khảo tối đa?",
+      "expected_answer": "Giảng viên được mượn tối đa 3 sách tham khảo.",
+      "expected_context": "library-loan-faculty",
+      "config_a": {
+        "retrieval_source": "dense",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 1.0,
+          "answer_relevance": 1.0,
+          "context_recall": 1.0,
+          "context_precision": 0.7
+        },
+        "root_cause": "ok",
+        "answer": "Giảng viên được mượn tối đa 3 cuốn sách tham khảo."
+      },
+      "config_b": {
+        "retrieval_source": "hybrid",
+        "n_sources": 4,
+        "metrics": {
+          "faithfulness": 1.0,
+          "answer_relevance": 1.0,
+          "context_recall": 1.0,
+          "context_precision": 0.7
+        },
+        "root_cause": "ok",
+        "answer": "Giảng viên (và cán bộ UIT) được mượn tối đa 3 cuốn sách tham khảo."
+      },
+      "delta": {
+        "faithfulness": 0.0,
+        "answer_relevance": 0.0,
+        "context_recall": 0.0,
+        "context_precision": 0.0
+      }
+    }
+  ],
+  "worst": [
+    {
+      "case": 1,
+      "question": "Sinh viên UIT được mượn bao nhiêu sách tham khảo tối đa?",
+      "expected_answer": "Sinh viên UIT được mượn tối đa 3 sách tham khảo.",
+      "expected_context": "library-loan-student",
+      "config_a": {
+        "retrieval_source": "dense",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 0.0,
+          "answer_relevance": 0.0,
+          "context_recall": 0.0,
+          "context_precision": 0.0
+        },
+        "root_cause": "retrieval: ngữ cảnh thiếu thông tin để trả lời (recall thấp)",
+        "answer": "Sinh viên UIT được mượn tối đa 5 cuốn sách tham khảo."
+      },
+      "config_b": {
+        "retrieval_source": "hybrid",
+        "n_sources": 3,
+        "metrics": {
+          "faithfulness": 1.0,
+          "answer_relevance": 1.0,
+          "context_recall": 1.0,
+          "context_precision": 0.5
+        },
+        "root_cause": "ok",
+        "answer": "Tại Thư viện UIT, sinh viên được mượn tối đa 3 cuốn sách tham khảo.  \n(Nếu mượn tại các thư viện thành viên khác của ĐHQG-HCM, mức tối đa chung cho sách tham khảo – giáo trình là 5 cuốn.)"
+      },
+      "delta": {
+        "faithfulness": 1.0,
+        "answer_relevance": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 0.5
+      }
+    },
+    {
+      "case": 3,
+      "question": "Giảng viên UIT được mượn bao nhiêu giáo trình tối đa?",
+      "expected_answer": "Giảng viên UIT được mượn tối đa 5 giáo trình.",
+      "expected_context": "library-loan-faculty",
+      "config_a": {
+        "retrieval_source": "dense",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 0.0,
+          "answer_relevance": 0.0,
+          "context_recall": 0.0,
+          "context_precision": 0.0
+        },
+        "root_cause": "retrieval: ngữ cảnh thiếu thông tin để trả lời (recall thấp)",
+        "answer": "Giảng viên UIT được mượn tối đa 5 quyển giáo trình."
+      },
+      "config_b": {
+        "retrieval_source": "hybrid",
+        "n_sources": 3,
+        "metrics": {
+          "faithfulness": 1.0,
+          "answer_relevance": 1.0,
+          "context_recall": 1.0,
+          "context_precision": 0.8
+        },
+        "root_cause": "ok",
+        "answer": "Giảng viên UIT được mượn tối đa 5 cuốn giáo trình."
+      },
+      "delta": {
+        "faithfulness": 1.0,
+        "answer_relevance": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 0.8
+      }
+    },
+    {
+      "case": 7,
+      "question": "Số tín chỉ chuyên ngành trong ngành Công nghệ Thông tin là bao nhiêu?",
+      "expected_answer": "Số tín chỉ chuyên ngành là 24 tín chỉ.",
+      "expected_context": "k18-it-cu-nhan-nganh-cong-nghe-thong-tin-ap-dung-tu-khoa-18-2023",
+      "config_a": {
+        "retrieval_source": "dense",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 0.0,
+          "answer_relevance": 0.0,
+          "context_recall": 0.0,
+          "context_precision": 0.0
+        },
+        "root_cause": "retrieval: ngữ cảnh thiếu thông tin để trả lời (recall thấp)",
+        "answer": "Theo đề cương, khối kiến thức giáo dục chuyên nghiệp (tức khối kiến thức chuyên ngành) của ngành Công nghệ Thông tin là 75 tín chỉ."
+      },
+      "config_b": {
+        "retrieval_source": "hybrid",
+        "n_sources": 5,
+        "metrics": {
+          "faithfulness": 1.0,
+          "answer_relevance": 0.0,
+          "context_recall": 1.0,
+          "context_precision": 0.2
+        },
+        "root_cause": "generation: truy xuất được nhưng câu trả lời không khớp kỳ vọng",
+        "answer": ""
+      },
+      "delta": {
+        "faithfulness": 1.0,
+        "answer_relevance": 0.0,
+        "context_recall": 1.0,
+        "context_precision": 0.2
+      }
+    }
+  ]
+}

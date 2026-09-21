@@ -1,0 +1,92 @@
+[
+  {
+    "question": "Sinh viên UIT được mượn bao nhiêu sách tham khảo tối đa?",
+    "expected_answer": "Sinh viên UIT được mượn tối đa 3 sách tham khảo.",
+    "expected_context": "library-loan-student"
+  },
+  {
+    "question": "Hạn mượn sách tham khảo cho sinh viên là bao nhiêu ngày?",
+    "expected_answer": "Hạn mượn sách tham khảo cho sinh viên là 21 ngày, có thể gia hạn 2 lần, mỗi lần 7 ngày.",
+    "expected_context": "library-loan-student"
+  },
+  {
+    "question": "Giảng viên UIT được mượn bao nhiêu giáo trình tối đa?",
+    "expected_answer": "Giảng viên UIT được mượn tối đa 5 giáo trình.",
+    "expected_context": "library-loan-faculty"
+  },
+  {
+    "question": "Hạn mượn giáo trình cho giảng viên tại Thư viện UIT là bao nhiêu ngày?",
+    "expected_answer": "Hạn mượn giáo trình cho giảng viên tại Thư viện UIT là 90 ngày, gia hạn 2 lần, mỗi lần 15 ngày.",
+    "expected_context": "library-loan-faculty"
+  },
+  {
+    "question": "Tổng số tín chỉ tối thiểu để tốt nghiệp ngành Công nghệ Thông tin là bao nhiêu?",
+    "expected_answer": "Tổng số tín chỉ tối thiểu để tốt nghiệp là 125 tín chỉ.",
+    "expected_context": "k18-it-cu-nhan-nganh-cong-nghe-thong-tin-ap-dung-tu-khoa-18-2023"
+  },
+  {
+    "question": "Số tín chỉ môn Giáo dục đại cương là bao nhiêu?",
+    "expected_answer": "Số tín chỉ môn Giáo dục đại cương là 45 tín chỉ.",
+    "expected_context": "k18-it-cu-nhan-nganh-cong-nghe-thong-tin-ap-dung-tu-khoa-18-2023"
+  },
+  {
+    "question": "Số tín chỉ chuyên ngành trong ngành Công nghệ Thông tin là bao nhiêu?",
+    "expected_answer": "Số tín chỉ chuyên ngành là 24 tín chỉ.",
+    "expected_context": "k18-it-cu-nhan-nganh-cong-nghe-thong-tin-ap-dung-tu-khoa-18-2023"
+  },
+  {
+    "question": "Sinh viên có thể mượn bao nhiêu giáo trình?",
+    "expected_answer": "Sinh viên có thể mượn tối đa 5 giáo trình.",
+    "expected_context": "library-loan-student"
+  },
+  {
+    "question": "Tỷ lệ phần trăm tín chỉ chuyên ngành trong tổng số là bao nhiêu?",
+    "expected_answer": "Tỷ lệ phần trăm tín chỉ chuyên ngành là 54.4%.",
+    "expected_context": "k18-it-cu-nhan-nganh-cong-nghe-thong-tin-ap-dung-tu-khoa-18-2023"
+  },
+  {
+    "question": "Môn tốt nghiệp (T) là bao nhiêu tín chỉ?",
+    "expected_answer": "Môn tốt nghiệp (T) là 12 tín chỉ.",
+    "expected_context": "k18-it-cu-nhan-nganh-cong-nghe-thong-tin-ap-dung-tu-khoa-18-2023"
+  },
+  {
+    "question": "Sinh viên UIT được học bao nhiêu môn lý luận chính trị và pháp luật?",
+    "expected_answer": "Sinh viên UIT học 13 tín chỉ lý luận chính trị và pháp luật.",
+    "expected_context": "k18-it-cu-nhan-nganh-cong-nghe-thong-tin-ap-dung-tu-khoa-18-2023"
+  },
+  {
+    "question": "Giảng viên có thể gia hạn sách tham khảo bao nhiêu lần?",
+    "expected_answer": "Giảng viên có thể gia hạn 2 lần, mỗi lần 7 ngày.",
+    "expected_context": "library-loan-faculty"
+  },
+  {
+    "question": "Luận án, luận văn, khóa luận có được mượn không?",
+    "expected_answer": "Luận án, luận văn, khóa luận chỉ được đọc tại chỗ, không được mượi về.",
+    "expected_context": "library-loan-student"
+  },
+  {
+    "question": "Số tín chỉ Toán-Tin-Học-Khoa học tự nhiên là bao nhiêu?",
+    "expected_answer": "Số tín chỉ Toán-Tin học-Khoa học tự nhiên là 18 tín chỉ.",
+    "expected_context": "k18-it-cu-nhan-nganh-cong-nghe-thong-tin-ap-dung-tu-khoa-18-2023"
+  },
+  {
+    "question": "Số tín chỉ Ngoại ngữ trong chương trình học là bao nhiêu?",
+    "expected_answer": "Số tín chỉ Ngoại ngữ là 12 tín chỉ.",
+    "expected_context": "k18-it-cu-nhan-nganh-cong-nghe-thong-tin-ap-dung-tu-khoa-18-2023"
+  },
+  {
+    "question": "Tổng số tín chỉ kiến thức chuyên nghiệp là bao nhiêu?",
+    "expected_answer": "Tổng số tín chỉ kiến thức chuyên nghiệp là 68 tín chỉ.",
+    "expected_context": "k18-it-cu-nhan-nganh-cong-nghe-thong-tin-ap-dung-tu-khoa-18-2023"
+  },
+  {
+    "question": "Khóa luận hoặc môn học chuyên đề tốt nghiệp là bao nhiêu tín chỉ?",
+    "expected_answer": "Khóa luận hoặc môn học chuyên đề tốt nghiệp là 10 tín chỉ.",
+    "expected_context": "k18-it-cu-nhan-nganh-cong-nghe-thong-tin-ap-dung-tu-khoa-18-2023"
+  },
+  {
+    "question": "Giảng viên được mượon bao nhiêu sách tham khảo tối đa?",
+    "expected_answer": "Giảng viên được mượn tối đa 3 sách tham khảo.",
+    "expected_context": "library-loan-faculty"
+  }
+]
